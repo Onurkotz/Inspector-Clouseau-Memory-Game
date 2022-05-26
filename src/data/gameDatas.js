@@ -210,14 +210,14 @@ export const gameDatas = [
     id: 29,
   },
   {
-    ame: "Frédéric Chopin",
+    name: "Frédéric Chopin",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Frederic_Chopin_photo.jpeg/220px-Frederic_Chopin_photo.jpeg",
     visible: true,
     id: 30,
   },
   {
-    ame: "Frédéric Chopin",
+    name: "Frédéric Chopin",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Frederic_Chopin_photo.jpeg/220px-Frederic_Chopin_photo.jpeg",
     visible: true,

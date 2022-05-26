@@ -50,7 +50,10 @@ function List() {
           >
             Inspector Clouseau Memory Game
             <p className="note">
-              Mission: Find same two historical character's photograph.
+              Mission: Historical Characters
+            </p>
+            <p className="note-2">
+              Find same two historical character's photograph.
             </p>
           </Heading>
 
