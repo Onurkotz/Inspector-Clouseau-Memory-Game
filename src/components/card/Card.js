@@ -1,14 +1,12 @@
-import { Image, GridItem, Box, Center } from "@chakra-ui/react";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addSelectedItems,
-  compare,
-  setVisible,
-} from "../redux/gameSlice/gameSlice";
+
+import { Image, GridItem, Box } from "@chakra-ui/react";
+
+import { addSelectedItems, setVisible } from "../../redux/gameSlice/gameSlice";
 
 const notVisibleImg =
-  "https://i.pinimg.com/originals/05/fb/25/05fb258146be22db8765131a610c5ef2.jpg";
+  "https://www.payneful.co.uk/projects/french-accent-translator/images/clouseau.png";
 
 function Card({ item }) {
   const selectedItems = useSelector((state) => state.cardList.selectedItems);
@@ -25,13 +23,25 @@ function Card({ item }) {
   return (
     <div>
       <GridItem>
-        <Box>
+        <Box
+          borderWidth={item.visible ? "2px" : "1px"}
+          borderRadius="xl"
+          borderColor={item.visible ? "blue" : "red"}
+          w="100px"
+          h="157px"
+        >
           <Image
             onClick={() => handleOnClick(item)}
             w="100px"
-            h="110px"
+            h="120px"
             src={item.visible ? item.image : notVisibleImg}
+            borderWidth="1px"
+            borderRadius="lg"
+            alignItems="center"
           />
+          <p style={{ fontSize: "12px" }}>
+            {item.visible ? item.name : "Inspector Clouseau"}
+          </p>
         </Box>
       </GridItem>
     </div>

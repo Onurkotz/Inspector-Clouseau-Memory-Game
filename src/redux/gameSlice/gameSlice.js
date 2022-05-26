@@ -4,7 +4,7 @@ import { gameDatas } from "../../data/gameDatas";
 export const gameSlice = createSlice({
   name: "cardList",
   initialState: {
-    puan: 0,
+    score: 0,
     items: gameDatas,
     selectedItems: [],
   },
@@ -15,7 +15,7 @@ export const gameSlice = createSlice({
         let id2 = state.selectedItems[1].id;
 
         if (state.selectedItems[0].name === state.selectedItems[1].name) {
-          state.puan += 10;
+          state.score += 30;
         } else {
           for (let i = 0; i < state.items.length; i++) {
             if (state.items[i].id === id1 || state.items[i].id === id2) {
@@ -23,7 +23,7 @@ export const gameSlice = createSlice({
             }
           }
 
-          state.puan -= 10;
+          state.score -= 10;
         }
 
         state.selectedItems = [];
