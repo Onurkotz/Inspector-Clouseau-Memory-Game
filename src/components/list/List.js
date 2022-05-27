@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./list.css";
@@ -19,14 +19,15 @@ function List() {
 
   const dispatch = useDispatch();
 
+  function compareCard(arg) {
+    dispatch(compare());
+  }
+
   useEffect(() => {
-    function compareCard(arg) {
-      dispatch(compare());
-    }
     if (selectedItems.length === 2) {
       setTimeout(compareCard, 1000);
     }
-  }, [selectedItems]);
+  }, [compareCard, selectedItems]);
 
   useEffect(() => {
     function closeCard(arg) {
