@@ -26,7 +26,7 @@ function List() {
     if (selectedItems.length === 2) {
       setTimeout(compareCard, 1000);
     }
-  }, [selectedItems]);
+  }, [dispatch, selectedItems]);
 
   useEffect(() => {
     function closeCard(arg) {
@@ -34,7 +34,7 @@ function List() {
     }
     dispatch(shuffle());
     setTimeout(closeCard, 1500);
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
