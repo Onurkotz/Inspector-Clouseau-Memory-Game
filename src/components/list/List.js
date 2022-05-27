@@ -19,17 +19,6 @@ function List() {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(shuffle());
-    setTimeout(closeCard, 1500);
-  }, []);
-
-  useEffect(() => {
-    if (selectedItems.length === 2) {
-      setTimeout(compareCard, 1000);
-    }
-  }, [selectedItems]);
-
   function compareCard(arg) {
     dispatch(compare());
   }
@@ -37,6 +26,17 @@ function List() {
   function closeCard(arg) {
     dispatch(setUnVisibleAllCard());
   }
+
+  useEffect(() => {
+    if (selectedItems.length === 2) {
+      setTimeout(compareCard, 1000);
+    }
+  }, [selectedItems]);
+
+  useEffect(() => {
+    dispatch(shuffle());
+    setTimeout(closeCard, 1500);
+  }, []);
 
   return (
     <div>
@@ -49,9 +49,7 @@ function List() {
             fontFamily={"Finger Paint"}
           >
             Inspector Clouseau Memory Game
-            <p className="note">
-              Mission: Historical Characters
-            </p>
+            <p className="note">Mission: Historical Characters</p>
             <p className="note-2">
               Find same two historical character's photograph.
             </p>
