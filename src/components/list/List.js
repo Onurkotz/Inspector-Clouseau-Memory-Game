@@ -19,21 +19,19 @@ function List() {
 
   const dispatch = useDispatch();
 
-  function compareCard(arg) {
-    dispatch(compare());
-  }
-
-  function closeCard(arg) {
-    dispatch(setUnVisibleAllCard());
-  }
-
   useEffect(() => {
+    function compareCard(arg) {
+      dispatch(compare());
+    }
     if (selectedItems.length === 2) {
       setTimeout(compareCard, 1000);
     }
   }, [selectedItems]);
 
   useEffect(() => {
+    function closeCard(arg) {
+      dispatch(setUnVisibleAllCard());
+    }
     dispatch(shuffle());
     setTimeout(closeCard, 1500);
   }, []);
